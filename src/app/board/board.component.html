@@ -1,0 +1,65 @@
+  <h1>SUDOKU</h1>
+
+<div class="menu-and-sudoku-board">
+  <ul class="menu">
+    <li class="menu-list" (click)="start()">Начать</li>
+    <li class="menu-list" (click)="resetSudoku()">Очистить</li>
+    <li class="menu-list sub-parent" >Сгенерировать
+      <ul class="sub-menu">
+        <li class="menu-list" (click)="generateSudoku(1)">Легкий</li>
+        <li class="menu-list" (click)="generateSudoku(2)">Средний</li>
+        <li class="menu-list" (click)="generateSudoku(3)">Сложный</li>
+      </ul>
+    </li>
+    <li class="menu-list sub-parent">Подсказки
+      <ul class="sub-menu">
+        <li class="menu-list"ng
+            (click)="changeHighlight()"
+            [ngClass]="this.highlight ? 'selected-cell' : ''"
+        >• подсветка</li>
+        <li class="menu-list" (click)="showHints($event.target)">• возможные ходы</li>
+      </ul>
+    </li>
+    <li class="menu-list">Топ</li>
+    <li class="menu-list errors"> Ошибок: {{ this.errors }}</li>
+    <li class="menu-list unhoverable"> Время: {{ this.time }}</li>
+  </ul>
+  <div class="sudoku-board">
+    <div *ngFor="let rows of sudoku; let r = index" class="sudoku-row">
+      <app-cell
+        *ngFor="let value of rows; let c = index"
+        [ngClass]="(this.currentValue == value && value && this.highlight) ? 'selected-in-cell'
+         : (this.isDefaultValue(r, c) ? 'default-value-in-cell' : '')"
+        class="sudoku-value"
+        [value] = "value"
+        (click)="selectCell(value, r, c, $event.target)"
+      ></app-cell>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="values" *ngIf="this.hints">
+  <div
+    class="value"
+    *ngFor="let value of possibleMoves"
+    (click)="setValue(value)"
+  >
+    {{value}}
+  </div>
+</div>
+
+  <div class="values" *ngIf="!this.hints">
+    <div
+      class="value"
+      *ngFor="let value of values"
+      (click)="setValue(value)"
+    >
+      {{value}}
+    </div>
+  </div>
+
+
+
+

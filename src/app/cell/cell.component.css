@@ -1,0 +1,58 @@
+.cell-value {
+  margin: 4px 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 40px;
+  transition: .5s;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.cell-value:hover {
+  color: #333;
+  background: #ff9283;
+}
+
+.null-value {
+  color: #333;
+}
+
+.null-value:hover {
+  color: #ff9283;
+}
+
+.selected-cell {
+  background: #ff706d;
+}
+
+@media screen and (max-height: 670px) {
+  .cell-value {
+    height: 47px;
+    width: 47px;
+    font-size: 35px;
+    margin: 2px 0;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .cell-value {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .cell-value {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+

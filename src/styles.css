@@ -1,0 +1,16 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.selected-in-cell > * {
+  background: #ff706d !important;
+}
+
+.default-value-in-cell > * {
+  color: #9a9a9a !important;
+}
+
+

@@ -1,0 +1,109 @@
+.menu-and-sudoku-board {
+  display: flex;
+
+}
+
+.menu {
+  background: #222;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+h1 {
+  background: #333;
+  text-align: center;
+  color: #fff;
+}
+
+.menu-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.menu-list:hover {
+  background: #f47056;
+}
+
+.sudoku-board {
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sudoku-row {
+}
+
+.values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.value {
+  padding: 5px 15px;
+  margin: 5px 3px;
+  font-size: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  transition: 1s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.value:hover {
+  /*color: #333;*/
+  background: #ff9283;
+}
+
+
+.sudoku-value:nth-child(3n+3) {
+  margin-right: 15px;
+}
+
+.sudoku-row:nth-child(3n+3) {
+  margin-bottom: 15px;
+}
+
+.selected-cell {
+  background: #ff706d;
+}
+
+
+
+.sub-menu {
+  background: #1a1a1a;
+  padding: 10px;
+  margin: 5px 0 0 0;
+}
+
+.sub-parent  {
+  /*align-items: flex-start;*/
+  flex-direction: column;
+  padding: 5px 0 0 0;
+}
+
+.errors {
+  background: #ff6464;
+}
+
+.errors:hover {
+}
+
+
+.unhoverable:hover {
+  background: #222;
+}
